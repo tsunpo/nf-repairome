@@ -21,7 +21,7 @@ params.scripts_dir  = params.scripts_dir  ?: "${params.code_dir}/scripts"
 // Step 1: Align R1 guide reads (from 01_align_guides_R1.sh)
 process ALIGN_GUIDES_R1 {
     tag "${meta.id}"
-    publishDir "${params.outdir}/${meta.target_subpath}", mode: 'copy', pattern: "*_guides.txt"
+    publishDir path: { "${params.outdir}/${meta.target_subpath}" }, mode: 'copy', pattern: "*_guides.txt"
 
     cpus 8
     memory '16 GB'
@@ -60,7 +60,7 @@ process ALIGN_GUIDES_R1 {
 // Step 2: Indel analysis on R2 reads (from 02_analysis_indels_R2.sh)
 process ANALYSIS_INDELS_R2 {
     tag "${meta.id}"
-    publishDir "${params.outdir}/${meta.target_subpath}", mode: 'copy', pattern: "*_{proc,indel}"
+    publishDir path: { "${params.outdir}/${meta.target_subpath}" }, mode: 'copy', pattern: "*_{proc,indel}"
 
     cpus 8
     memory '16 GB'
@@ -93,7 +93,7 @@ process ANALYSIS_INDELS_R2 {
 // Step 3: Combine outputs to build matrix (from 03_create_matrix.sh)
 process CREATE_MATRIX {
     tag "${meta.id}"
-    publishDir "${params.outdir}/${meta.target_subpath}", mode: 'copy'
+    publishDir path: { "${params.outdir}/${meta.target_subpath}" }, mode: 'copy'
 
     cpus 2
     memory '8 GB'
