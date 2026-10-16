@@ -1,0 +1,12 @@
+# Nextflow work and execution logs
+work/
+.nextflow/
+.nextflow.log*
+
+# Raw data and scratch directories
+projects/Data1/
+
+# Office temporary lock files & macOS artifacts
+~$*
+.DS_Store
+**/.DS_Store
