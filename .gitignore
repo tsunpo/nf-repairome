@@ -4,7 +4,6 @@ work/
 .nextflow.log*
 
 # Raw data and scratch directories
-projects/Data1/
 
 # Office temporary lock files & macOS artifacts
 ~$*

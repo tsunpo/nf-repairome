@@ -1,9 +1,9 @@
 nextflow.enable.dsl = 2
 
-params.samplesheet  = "Data1.txt"
-params.fastq_dir    = "/storage/scratch01/users/tpyang/tdb/repairome/fastq"
-params.outdir       = "./results"
-params.code_dir     = "$HOME/tdb/repairome/code"
+params.samplesheet  = "Data1.tsv"
+params.fastq_dir    = "./fastq"
+params.outdir       = "./data"
+params.code_dir     = "/storage/scratch01/users/tpyang/dev/nf-repairome"
 params.bt2_index    = "${params.code_dir}/index/guides_ext"
 params.scripts_dir  = "${params.code_dir}/scripts"
 
