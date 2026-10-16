@@ -104,7 +104,9 @@ process CREATE_MATRIX {
     tuple val(meta), path(guides_file), path(proc_file), path(indel_file)
 
     output:
-    tuple val(meta), path("${meta.name_exp}*"), emit: results
+    tuple val(meta), path("${meta.name_exp}_*.{txt,tsv,csv,matrix}*"), emit: results, optional: true
+    // Or if it generates files without underscore:
+    // tuple val(meta), path("*"), emit: results
 
     script:
     """
