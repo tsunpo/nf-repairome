@@ -35,7 +35,8 @@ process ALIGN_GUIDES_R1 {
     tuple val(meta), path("${meta.name_exp}_guides.txt"), emit: guides
 
     script:
-    def bt2_base = "${bt2_index_files[0]}".replaceAll(/\.[0-9]+\.bt2$/, '')
+    // Strips either .1.bt2 or .rev.1.bt2 so the prefix is reliably "guides_ext"
+    def bt2_base = "${bt2_index_files[0]}".replaceAll(/(\.rev)?\.[0-9]+\.bt2$/, '')
     """
     # 1. Trim 5' flanking vector sequence
     trimmomatic SE -threads 4 -phred33 \
