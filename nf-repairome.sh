@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=nf_repairome
-#SBATCH --output=logs/nf_%x_%j.out
-#SBATCH --error=logs/nf_%x_%j.err
+#SBATCH --output=logs/%x_%j.out
+#SBATCH --error=logs/%x_%j.err
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=4G
 #SBATCH --time=24:00:00
