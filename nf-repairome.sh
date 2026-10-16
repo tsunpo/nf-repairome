@@ -10,11 +10,14 @@
 source "$HOME/miniforge3/etc/profile.d/conda.sh"
 conda activate repairome
 
+# Fallback for CELL if completely unset
+CELL="${CELL:-Data1}"
+
 # 2. Run Nextflow
 cd /storage/scratch01/users/tpyang/tdb/repairome
 
 nextflow run /storage/scratch01/users/tpyang/dev/nf-repairome/main.nf \
-    --samplesheet Data1.tsv \
+    --samplesheet ${CELL}.tsv \
     --fastq_dir /storage/scratch01/users/tpyang/tdb/repairome/fastq \
     --outdir /storage/scratch01/users/tpyang/tdb/repairome/data \
     -profile slurm
