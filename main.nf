@@ -63,10 +63,9 @@ process ANALYSIS_INDELS_R2 {
     tag "${meta.id}"
     publishDir path: { "${params.outdir}/${meta.target_subpath}" }, mode: 'copy', pattern: "*_{proc,indel}"
 
-    cpus 8
-    memory { 24.GB * task.attempt }   // Automatically scales if memory is tight
+    cpus 4
+    memory '32 GB'
     time '6h'
-    maxRetries 1
 
     input:
     tuple val(meta), path(r1_fastq), path(r2_fastq)
@@ -76,16 +75,14 @@ process ANALYSIS_INDELS_R2 {
 
     script:
     """
-    set -euo pipefail
     mkdir -p tmp_chunks
     rm -f tmp_chunks/*
 
-    # Split FASTQ into 3,000,000-line chunks (~750k reads/chunk)
-    zcat "${r2_fastq}" | split -l 3000000 - tmp_chunks/chunk_
+    # Split FASTQ into 1,000,000-line chunks (~250k reads) to keep Python memory usage low
+    zcat "${r2_fastq}" | split -l 1000000 - tmp_chunks/chunk_
 
-    # Run indel analysis across chunks
-    # Using find to pass chunk paths safely into xargs
-    find tmp_chunks -name "chunk_*" | xargs -n 1 -P ${task.cpus} -I {} python "${params.scripts_dir}/analysis_INDELS.py" {} "${meta.cut_pos}"
+    # Run indel extraction across chunks with controlled concurrency (4 parallel workers)
+    ls -1 tmp_chunks/chunk_* | xargs -n 1 -P 4 -I {} python "${params.scripts_dir}/analysis_INDELS.py" {} "${meta.cut_pos}"
 
     # Concatenate chunk results
     cat tmp_chunks/*_proc > "${meta.name_exp}_proc"
