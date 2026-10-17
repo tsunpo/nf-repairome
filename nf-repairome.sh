@@ -30,4 +30,5 @@ nextflow run /storage/scratch01/users/tpyang/dev/nf-repairome/main.nf \
     --fastq_dir /storage/scratch01/users/tpyang/tdb/repairome/fastq \
     --outdir /storage/scratch01/users/tpyang/tdb/repairome/data \
     -profile slurm \
+    -ansi-log false \
     -resume
