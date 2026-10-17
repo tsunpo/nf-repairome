@@ -2,15 +2,15 @@ nextflow.enable.dsl = 2
 
 /*
 ========================================================================================
-    Pipeline Parameters (defaults defined in nextflow.config)
+    Pipeline Parameters
 ========================================================================================
 */
-params.samplesheet  = params.samplesheet  ?: "Data1.tsv"
-params.fastq_dir    = params.fastq_dir    ?: null
-params.outdir       = params.outdir       ?: null
-params.code_dir     = params.code_dir     ?: "${projectDir}"
-params.bt2_index    = params.bt2_index    ?: "${params.code_dir}/index/guides_ext"
-params.scripts_dir  = params.scripts_dir  ?: "${params.code_dir}/scripts"
+params.samplesheet = params.samplesheet ?: "${launchDir}/${params.cell ?: 'Data1'}.tsv"
+params.fastq_dir   = params.fastq_dir   ?: "${launchDir}/fastq"
+params.outdir      = params.outdir      ?: "${launchDir}/data"
+params.code_dir    = params.code_dir    ?: "${projectDir}"
+params.bt2_index   = params.bt2_index   ?: "${params.code_dir}/index/guides_ext"
+params.scripts_dir = params.scripts_dir ?: "${params.code_dir}/scripts"
 
 /*
 ========================================================================================
