@@ -3,28 +3,30 @@
 Nextflow implementation of the REPAIRome pipeline [https://zenodo.org/records/15095299]
 
 ## Table of Contents
-- [Clone and Install](#clone-and-install-the-nf-repairome-repository-on-your-hpc-directory)
+- [Installation](#installation)
 - [References](#references)
 
 ---
 
-## Clone and install the nf-repairome repository on your HPC directory
+## Installation
+
+Clone and install the nf-repairome repository on your HPC 
 
 ```bash
-# Navigate to your workspace directory (e.g., $HOME or /scratch/$USER)
-cd /scratch/$USER
+# Navigate to your workspace directory (e.g., $HOME)
+cd $HOME
 
 # Clone the repository via HTTPS
-git clone [https://github.com/tsunpo/nf-repairome.git](https://github.com/tsunpo/nf-repairome.git)
+git clone https://github.com/tsunpo/nf-repairome.git
 
 # Enter the pipeline directory
 cd nf-repairome
 
 # Setup $REPAIROME_CODE
-echo 'export REPAIROME_CODE="<your HPC directory>/nf-repairome"' >> ~/.bashrc
+echo 'export REPAIROME_CODE="$HOME/nf-repairome"' >> ~/.bashrc
 source ~/.bashrc
 
-# Create and activate the `repairome` Conda environment using the following command:
+# Create and activate the `repairome` Conda environment
 conda create -n repairome \
   -c conda-forge \
   -c bioconda \
