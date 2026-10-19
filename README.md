@@ -2,7 +2,7 @@
 
 Nextflow implementation of the REPAIRome pipeline [https://zenodo.org/records/15095299]
 
-# Table of Contents
+## Table of Contents
 - [Clone and Install](#clone-and-install-the-nextflow-repairome-repository-onto-your-hpc-directory)
 - [References](#references)
 
