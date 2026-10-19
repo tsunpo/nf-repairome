@@ -25,7 +25,9 @@ process ALIGN_GUIDES_R1 {
 
     cpus 8
     memory '16 GB'
-    time '2h'
+    time { 12.h * task.attempt }
+    maxRetries 2
+    errorStrategy { task.exitStatus in [125, 137, 140] ? 'retry' : 'finish' }
 
     input:
     tuple val(meta), path(r1_fastq), path(r2_fastq)
@@ -35,9 +37,10 @@ process ALIGN_GUIDES_R1 {
     tuple val(meta), path("${meta.name_exp}_guides.txt"), emit: guides
 
     script:
-    // Strips either .1.bt2 or .rev.1.bt2 so the prefix is reliably "guides_ext"
     def bt2_base = "${bt2_index_files[0]}".replaceAll(/(\.rev)?\.[0-9]+\.bt2$/, '')
     """
+    set -euo pipefail
+
     # 1. Trim 5' flanking vector sequence
     trimmomatic SE -threads 4 -phred33 \
         "${r1_fastq}" \
@@ -63,9 +66,11 @@ process ANALYSIS_INDELS_R2 {
     tag "${meta.id}"
     publishDir path: { "${params.outdir}/${meta.target_subpath}" }, mode: 'copy', pattern: "*_{proc,indel}"
 
-    cpus 4
+    cpus 6
     memory '32 GB'
-    time '6h'
+    time { 48.h * task.attempt }
+    maxRetries 2
+    errorStrategy { task.exitStatus in [125, 137, 140] ? 'retry' : 'finish' }
 
     input:
     tuple val(meta), path(r1_fastq), path(r2_fastq)
@@ -81,8 +86,8 @@ process ANALYSIS_INDELS_R2 {
     # Split FASTQ into 1,000,000-line chunks (~250k reads) to keep Python memory usage low
     zcat "${r2_fastq}" | split -l 1000000 - tmp_chunks/chunk_
 
-    # Run indel extraction across chunks with controlled concurrency (4 parallel workers)
-    ls -1 tmp_chunks/chunk_* | xargs -n 1 -P 4 -I {} python "${params.scripts_dir}/analysis_INDELS.py" {} "${meta.cut_pos}"
+    # Run indel extraction across chunks with controlled concurrency (6 parallel workers)
+    ls -1 tmp_chunks/chunk_* | xargs -n 1 -P 6 -I {} python "${params.scripts_dir}/analysis_INDELS.py" {} "${meta.cut_pos}"
 
     # Concatenate chunk results
     cat tmp_chunks/*_proc > "${meta.name_exp}_proc"
@@ -98,19 +103,21 @@ process CREATE_MATRIX {
     publishDir path: { "${params.outdir}/${meta.target_subpath}" }, mode: 'copy'
 
     cpus 2
-    memory '8 GB'
-    time '1h'
+    memory '16 GB'
+    time { 6.h * task.attempt }
+    maxRetries 2
+    errorStrategy { task.exitStatus in [125, 137, 140] ? 'retry' : 'finish' }
 
     input:
     tuple val(meta), path(guides_file), path(proc_file), path(indel_file)
 
     output:
     tuple val(meta), path("${meta.name_exp}_*.{txt,tsv,csv,matrix}*"), emit: results, optional: true
-    // Or if it generates files without underscore:
-    // tuple val(meta), path("*"), emit: results
 
     script:
     """
+    set -euo pipefail
+
     python "${params.scripts_dir}/create_matrix.py" \
         "${meta.name_exp}" \
         "${meta.name_exp}" \
