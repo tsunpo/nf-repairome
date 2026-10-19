@@ -23,12 +23,6 @@ process ALIGN_GUIDES_R1 {
     tag "${meta.id}"
     publishDir path: { "${params.outdir}/${meta.target_subpath}" }, mode: 'copy', pattern: "*_guides.txt"
 
-    cpus 8
-    memory '16 GB'
-    time { 12.h * task.attempt }
-    maxRetries 2
-    errorStrategy { task.exitStatus in [125, 137, 140] ? 'retry' : 'finish' }
-
     input:
     tuple val(meta), path(r1_fastq), path(r2_fastq)
     path bt2_index_files
@@ -66,12 +60,6 @@ process ANALYSIS_INDELS_R2 {
     tag "${meta.id}"
     publishDir path: { "${params.outdir}/${meta.target_subpath}" }, mode: 'copy', pattern: "*_{proc,indel}"
 
-    cpus 6
-    memory '32 GB'
-    time { 48.h * task.attempt }
-    maxRetries 2
-    errorStrategy { task.exitStatus in [125, 137, 140] ? 'retry' : 'finish' }
-
     input:
     tuple val(meta), path(r1_fastq), path(r2_fastq)
 
@@ -80,6 +68,7 @@ process ANALYSIS_INDELS_R2 {
 
     script:
     """
+    set -euo pipefail
     mkdir -p tmp_chunks
     rm -f tmp_chunks/*
 
@@ -101,12 +90,6 @@ process ANALYSIS_INDELS_R2 {
 process CREATE_MATRIX {
     tag "${meta.id}"
     publishDir path: { "${params.outdir}/${meta.target_subpath}" }, mode: 'copy'
-
-    cpus 2
-    memory '16 GB'
-    time { 6.h * task.attempt }
-    maxRetries 2
-    errorStrategy { task.exitStatus in [125, 137, 140] ? 'retry' : 'finish' }
 
     input:
     tuple val(meta), path(guides_file), path(proc_file), path(indel_file)
