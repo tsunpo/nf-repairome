@@ -3,16 +3,16 @@
 Nextflow implementation of the REPAIRome pipeline [https://zenodo.org/records/15095299]
 
 ## Table of Contents
-- [Clone and Install](#clone-and-install-the-nextflow-repairome-repository-onto-your-hpc-directory)
+- [Clone and Install](#clone-and-install-the-nf-repairome-repository-on-your-hpc-directory)
 - [References](#references)
 
 ---
 
-## Clone and install the NextFlow REPAIRome repository onto your HPC directory
+## Clone and install the nf-repairome repository on your HPC directory
 
 ```bash
-# Navigate to your working directory
-cd <your HPC directory>
+# Navigate to your workspace directory (e.g., $HOME or /scratch/$USER)
+cd /scratch/$USER
 
 # Clone the repository via HTTPS
 git clone [https://github.com/tsunpo/nf-repairome.git](https://github.com/tsunpo/nf-repairome.git)
