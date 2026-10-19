@@ -27,7 +27,7 @@ echo 'export REPAIROME_CODE="$HOME/nf-repairome"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-### Create and activate the `repairome` Conda environment
+### Create and activate the repairome Conda environment
 
 ```bash
 conda create -n repairome \
