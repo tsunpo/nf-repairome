@@ -64,13 +64,13 @@ projects/fastq/
 
 The structure of the samplesheet metadata is <CELL_LINE_NAME> <CUT_POSITION> <EXPERIMENTAL_REPLICATE> <FASTQ_FILE_NAME>. Therefore, the required samplesheet to run our RPE1 datasets will be:
 
-```text
-RPE1    Cut1    Rep1    SRR29304328
-RPE1    Cut1    Rep2    SRR29304327
-RPE1    Cut2    Rep1    SRR29304326
-RPE1    Cut2    Rep2    SRR29304325
-RPE1    Cut3    Rep1    SRR29304324
-RPE1    Cut3    Rep2    SRR29304323
+```tsv
+RPE1	Cut1	Rep1	SRR29304328
+RPE1	Cut1	Rep2	SRR29304327
+RPE1	Cut2	Rep1	SRR29304326
+RPE1	Cut2	Rep2	SRR29304325
+RPE1	Cut3	Rep1	SRR29304324
+RPE1	Cut3	Rep2	SRR29304323
 ```
 
 For this manual, the example samplesheet Data1.tsv can be found here:
@@ -83,7 +83,7 @@ projects/
 These two coulmns <CUT_POSITION> and <EXPERIMENTAL_REPLICATE> in the samplesheet can be NA.
 
 ```text
-Data1    NA    NA    Data1
+Data1	NA	NA	Data1
 ```
 
 ### Run
