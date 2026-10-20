@@ -42,11 +42,47 @@ conda create -n repairome \
 conda activate repairome
 ```
 
-## Run the example data shipped with the workflow
+## Usage
 
-### Run
+How to run the example data shipped with the workflow.
 
-### Prepare metadata
+### FASTQ files
+
+The example FASTQ files (R1 and R2) can be found under this directory:
+
+```
+projects/fastq/
+├── Data1_1.fastq.gz
+├── Data1_2.fastq.gz
+```
+
+### Metadata
+
+The structure of the metadata is <CELL_LINE_NAME> <CUT_POSITION> <REPLICATE> <FASTQ_FILE_NAME>
+
+Therefore, the metadata to run our RPE1 data will be:
+
+```
+| RPE1 | Cut1 | Rep1 | SRR29304328 |
+| RPE1 | Cut1 | Rep2 | SRR29304327 |
+| RPE1 | Cut2 | Rep1 | SRR29304326 |
+| RPE1 | Cut2 | Rep2 | SRR29304325 |
+| RPE1 | Cut3 | Rep1 | SRR29304324 |
+| RPE1 | Cut3 | Rep2 | SRR29304323 |
+```
+
+And the example metadata Data1.tsv for this manual can be found here:
+
+```
+projects/
+├── Data1.tsv
+```
+
+These two coulmns <CUT_POSITION> <REPLICATE> can be NA
+
+```
+| Data1 | NA | NA | Data1 |
+```
 
 ### Run
 
