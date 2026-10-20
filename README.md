@@ -58,9 +58,7 @@ projects/fastq/
 
 ### Metadata
 
-The structure of the metadata is <CELL_LINE_NAME> <CUT_POSITION> <REPLICATE> <FASTQ_FILE_NAME>
-
-Therefore, the metadata to run our RPE1 data will be:
+The structure of the metadata is <CELL_LINE_NAME> <CUT_POSITION> <REPLICATE> <FASTQ_FILE_NAME>. Therefore, the metadata to run our RPE1 data will be:
 
 ```
 | RPE1 | Cut1 | Rep1 | SRR29304328 |
