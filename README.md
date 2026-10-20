@@ -62,9 +62,9 @@ projects/fastq/
 
 ### Samplesheet
 
-The samplesheet requires four tab-delimited columns: <CELL_LINE_NAME> <CUT_POSITION> <EXPERIMENTAL_REPLICATE> <FASTQ_FILE_NAME>.
+The samplesheet requires four tab-delimited columns: `<CELL_LINE_NAME>` `<CUT_POSITION>` `<EXPERIMENTAL_REPLICATE>` `<FASTQ_FILE_NAME>`.
 
-For example, the samplesheet used to process our published RPE1 dataset (projects/RPE1.tsv) is structured as follows:
+For example, the samplesheet used to process our published RPE1 dataset (`projects/RPE1.tsv`) is structured as follows:
 
 ```text
 RPE1	Cut1	Rep1	SRR29304328
@@ -75,14 +75,14 @@ RPE1	Cut3	Rep1	SRR29304324
 RPE1	Cut3	Rep2	SRR29304323
 ```
 
-For testing, an example samplesheet (Data1.tsv) is provided under:
+For testing, an example samplesheet (`Data1.tsv`) is provided under:
 
 ```
 projects/
 └── Data1.tsv
 ```
 
-The <CUT_POSITION> and <EXPERIMENTAL_REPLICATE> columns can be set to NA if unavailable:
+The `<CUT_POSITION>` and `<EXPERIMENTAL_REPLICATE>` columns can be set to NA if unavailable:
 
 ```text
 Data1	NA	NA	Data1
@@ -108,9 +108,9 @@ nextflow run "$NF_REPAIROME_CODE/main.nf" \
 
 ### Output
 
-nf-repairome automatically generates the output directories matching the samplesheet.
+`nf-repairome` automatically generates the output directories matching the samplesheet.
 
-For the our RPE1 dataset:
+For the RPE1 dataset:
 
 ```
 projects/data/RPE1/Cut1
@@ -130,7 +130,7 @@ projects/data/RPE1/Cut2
 ...
 ```
 
-For the example run using Data1.tsv:
+For the example run using `Data1.tsv`:
 
 ```
 projects/data/Data1
