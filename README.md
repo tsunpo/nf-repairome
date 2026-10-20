@@ -28,10 +28,10 @@ echo 'export REPAIROME_CODE="$HOME/nf-repairome"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-### Create and activate the `repairome` Conda environment
+### Create and activate the Conda environment
 
 ```bash
-# Create the Conda enviroment and install required packages 
+# Create the `repairome` Conda enviroment and install required packages 
 conda create -n repairome \
   -c conda-forge \
   -c bioconda \
@@ -42,7 +42,9 @@ conda create -n repairome \
 conda activate repairome
 ```
 
-## Usage
+## Run the example data shipped with the workflow
+
+### Run
 
 ### Prepare metadata
 
