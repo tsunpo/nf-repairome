@@ -52,7 +52,7 @@ This section demonstrates how to run the example dataset provided with the workf
 
 ### FASTQ files
 
-The example FASTQ files (R1 and R2) are located in the following directory:
+The example FASTQ files ('R1' and 'R2') are located in the following directory:
 
 ```
 projects/fastq/
