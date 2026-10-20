@@ -134,7 +134,7 @@ projects/data/Data1
 ```
 
 ## References
-- **REPAIRome publication:** [https://pubmed.ncbi.nlm.nih.gov/41037600/](https://pubmed.ncbi.nlm.nih.gov/41037600/)
-- **REPAIRome website:** [https://repairome.bioinfo.cnio.es](https://repairome.bioinfo.cnio.es)
-- **REPAIRome pipeline:** [https://zenodo.org/records/15095299](https://zenodo.org/records/15095299)
-- **SRA depository:** [https://www.ncbi.nlm.nih.gov/sra?linkname=bioproject_sra_all&from_uid=1120653](https://www.ncbi.nlm.nih.gov/sra?linkname=bioproject_sra_all&from_uid=1120653)
+- REPAIRome publication: [https://pubmed.ncbi.nlm.nih.gov/41037600/](https://pubmed.ncbi.nlm.nih.gov/41037600/)
+- REPAIRome website: [https://repairome.bioinfo.cnio.es](https://repairome.bioinfo.cnio.es)
+- REPAIRome pipeline: [https://zenodo.org/records/15095299](https://zenodo.org/records/15095299)
+- SRA depository: [https://www.ncbi.nlm.nih.gov/sra?linkname=bioproject_sra_all&from_uid=1120653](https://www.ncbi.nlm.nih.gov/sra?linkname=bioproject_sra_all&from_uid=1120653)
