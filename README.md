@@ -27,8 +27,8 @@ git clone https://github.com/tsunpo/nf-repairome.git
 # Enter the workflow directory
 cd nf-repairome
 
-# Setup $REPAIROME_CODE
-echo 'export REPAIROME_CODE="$HOME/nf-repairome"' >> ~/.bashrc
+# Setup $NF_REPAIROME_CODE
+echo 'export NF_REPAIROME_CODE="$HOME/nf-repairome"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
@@ -93,10 +93,10 @@ And these two coulmns <CUT_POSITION> and <EXPERIMENTAL_REPLICATE> can be NA.
 cd projects
 
 # Launch Nextflow
-nextflow run "$REPAIROME_CODE/main.nf" \
+nextflow run "$NF_REPAIROME_CODE/main.nf" \
     --samplesheet Data1.tsv \
-    --fastq_dir "$REPAIROME_CODE/fastq" \
-    --outdir "$REPAIROME_CODE/data" \
+    --fastq_dir "$NF_REPAIROME_CODE/fastq" \
+    --outdir "$NF_REPAIROME_CODE/data" \
     -profile slurm \
     -resume
 
@@ -126,7 +126,7 @@ projects/data/RPE1/Cut2
 ...
 ```
 
-For this manual, after running the example metadata Data1.tsv
+For this manual, after running the example metadata Data1.tsv:
 
 ```
 projects/data/Data1
