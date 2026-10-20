@@ -57,7 +57,7 @@ The example FASTQ files (R1 and R2) can be found under this directory:
 ```
 projects/fastq/
 ├── Data1_1.fastq.gz
-├── Data1_2.fastq.gz
+└── Data1_2.fastq.gz
 ```
 
 ### Samplesheet
@@ -77,7 +77,7 @@ For this manual, the example samplesheet Data1.tsv can be found here:
 
 ```
 projects/
-├── Data1.tsv
+└── Data1.tsv
 ```
 
 These two coulmns <CUT_POSITION> and <EXPERIMENTAL_REPLICATE> in the samplesheet can be NA.
