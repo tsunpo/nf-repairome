@@ -60,7 +60,7 @@ projects/fastq/
 
 ### Metadata
 
-The structure of the metadata is <CELL_LINE_NAME> <CUT_POSITION> <REPLICATE> <FASTQ_FILE_NAME>. Therefore, the required metadata to run our RPE1 data will be:
+The structure of the metadata is <CELL_LINE_NAME> <CUT_POSITION> <EXPERIMENTAL_REPLICATE> <FASTQ_FILE_NAME>. Therefore, the required metadata to run our RPE1 data will be:
 
 ```
 | RPE1 | Cut1 | Rep1 | SRR29304328 |
@@ -78,12 +78,26 @@ projects/
 ├── Data1.tsv
 ```
 
-These two coulmns <CUT_POSITION> and <REPLICATE> can be NA
+And these two coulmns <CUT_POSITION> and <EXPERIMENTAL_REPLICATE> can be NA.
 
 ```
 | Data1 | NA | NA | Data1 |
 ```
 
 ### Run
+
+```bash
+# Enter the projects directory
+cd projects
+
+# Launch Nextflow
+nextflow run "$REPAIROME_CODE/main.nf" \
+    --samplesheet Data1.tsv \
+    --fastq_dir "$REPAIROME_CODE/fastq" \
+    --outdir "$REPAIROME_CODE/data" \
+    -profile slurm \
+    -resume
+
+```
 
 ### nf-repairome will generate the directories according to the metadata
