@@ -35,24 +35,24 @@ source ~/.bashrc
 ### Create and activate the Conda environment
 
 ```bash
-# Create the `repairome` Conda enviroment and install required packages 
+# Create the `repairome` Conda environment and install required packages 
 conda create -n repairome \
   -c conda-forge \
   -c bioconda \
   --override-channels \
   openjdk=17 trimmomatic bowtie2 samtools python=3.10 swalign pandas numpy matplotlib seaborn dask pyarrow kingfisher "sra-tools>=3.0.8" nextflow -y
 
-# Activate the Conda enviroment
+# Activate the Conda environment
 conda activate repairome
 ```
 
 ## Usage
 
-How to run the example datasets shipped with the workflow.
+This section demonstrates how to run the example dataset provided with the workflow.
 
 ### FASTQ files
 
-The example FASTQ files (R1 and R2) can be found under this directory:
+The example FASTQ files (R1 and R2) are located in the following directory:
 
 ```
 projects/fastq/
@@ -62,7 +62,9 @@ projects/fastq/
 
 ### Samplesheet
 
-The structure of the samplesheet metadata is <CELL_LINE_NAME> <CUT_POSITION> <EXPERIMENTAL_REPLICATE> <FASTQ_FILE_NAME>. Therefore, the required samplesheet to run our RPE1 published datasets will be:
+The samplesheet requires four tab-delimited columns: <CELL_LINE_NAME> <CUT_POSITION> <EXPERIMENTAL_REPLICATE> <FASTQ_FILE_NAME>.
+
+For example, the samplesheet used to process our published RPE1 dataset (projects/RPE1.tsv) is structured as follows:
 
 ```text
 RPE1	Cut1	Rep1	SRR29304328
@@ -73,20 +75,22 @@ RPE1	Cut3	Rep1	SRR29304324
 RPE1	Cut3	Rep2	SRR29304323
 ```
 
-For this manual, the example samplesheet Data1.tsv can be found here:
+For testing, an example samplesheet (Data1.tsv) is provided under:
 
 ```
 projects/
 └── Data1.tsv
 ```
 
-These two coulmns <CUT_POSITION> and <EXPERIMENTAL_REPLICATE> in the samplesheet can be NA.
+The <CUT_POSITION> and <EXPERIMENTAL_REPLICATE> columns can be set to NA if unavailable:
 
 ```text
 Data1	NA	NA	Data1
 ```
 
 ### Run
+
+Execute the test dataset using Nextflow:
 
 ```bash
 # Enter the projects directory
@@ -104,7 +108,9 @@ nextflow run "$NF_REPAIROME_CODE/main.nf" \
 
 ### Output
 
-nf-repairome will automatically generate the directories according to the input samplesheet. For example, for our RPE1 datasets:
+nf-repairome automatically generates the output directories matching the samplesheet.
+
+For the our RPE1 dataset:
 
 ```
 projects/data/RPE1/Cut1
@@ -124,7 +130,7 @@ projects/data/RPE1/Cut2
 ...
 ```
 
-For this manual, after running the example samplesheet Data1.tsv:
+For the example run using Data1.tsv:
 
 ```
 projects/data/Data1
