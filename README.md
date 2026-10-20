@@ -55,9 +55,10 @@ This section demonstrates how to run the example dataset provided with the workf
 The example FASTQ files (`R1` and `R2`) are located in the following directory:
 
 ```
-projects/fastq/
-├── Data1_1.fastq.gz
-└── Data1_2.fastq.gz
+projects
+└── fastq
+    ├── Data1_1.fastq.gz
+    └── Data1_2.fastq.gz
 ```
 
 ### Samplesheet
@@ -78,11 +79,11 @@ RPE1	Cut3	Rep2	SRR29304323
 For testing, an example samplesheet (`Data1.tsv`) is provided under:
 
 ```
-projects/
+projects
 └── Data1.tsv
 ```
 
-The `<CUT_POSITION>` and `<EXPERIMENTAL_REPLICATE>` columns can be set to NA if unavailable:
+The `<CUT_POSITION>` and `<EXPERIMENTAL_REPLICATE>` columns can be set to `NA` if unavailable:
 
 ```text
 Data1	NA	NA	Data1
@@ -113,30 +114,35 @@ nextflow run "$NF_REPAIROME_CODE/main.nf" \
 For the RPE1 dataset:
 
 ```
-projects/data/RPE1/Cut1
-├── RPE1_Cut1_Rep1_guides.txt
-├── RPE1_Cut1_Rep1_indel
-├── RPE1_Cut1_Rep1_proc
-├── RPE1_Cut1_Rep2_guides.txt
-├── RPE1_Cut1_Rep2_indel
-└── RPE1_Cut1_Rep2_proc
-projects/data/RPE1/Cut2
-├── RPE1_Cut2_Rep1_guides.txt
-├── RPE1_Cut2_Rep1_indel
-├── RPE1_Cut2_Rep1_proc
-├── RPE1_Cut2_Rep2_guides.txt
-├── RPE1_Cut2_Rep2_indel
-└── RPE1_Cut2_Rep2_proc
-...
+projects
+└── data
+    └── RPE1
+        ├── Cut1
+        │   ├── RPE1_Cut1_Rep1_guides.txt
+        │   ├── RPE1_Cut1_Rep1_indel
+        │   ├── RPE1_Cut1_Rep1_proc
+        │   ├── RPE1_Cut1_Rep2_guides.txt
+        │   ├── RPE1_Cut1_Rep2_indel
+        │   └── RPE1_Cut1_Rep2_proc
+        ├── Cut2
+        │   ├── RPE1_Cut2_Rep1_guides.txt
+        │   ├── RPE1_Cut2_Rep1_indel
+        │   ├── RPE1_Cut2_Rep1_proc
+        │   ├── RPE1_Cut2_Rep2_guides.txt
+        │   ├── RPE1_Cut2_Rep2_indel
+        │   └── RPE1_Cut2_Rep2_proc
+        ...
 ```
 
 For the example run using `Data1.tsv`:
 
 ```
-projects/data/Data1
-├── Data1_guides.txt
-├── Data1_indel
-└── Data1_proc
+projects
+└── data
+    └── Data1
+        ├── Data1_guides.txt
+        ├── Data1_indel
+        └── Data1_proc
 ```
 
 ## References
