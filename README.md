@@ -113,14 +113,15 @@ projects/data/RPE1/Cut1
 ├── RPE1_Cut1_Rep1_proc
 ├── RPE1_Cut1_Rep2_guides.txt
 ├── RPE1_Cut1_Rep2_indel
-├── RPE1_Cut1_Rep2_proc
+└──  RPE1_Cut1_Rep2_proc
+
 projects/data/RPE1/Cut2
 ├── RPE1_Cut2_Rep1_guides.txt
 ├── RPE1_Cut2_Rep1_indel
 ├── RPE1_Cut2_Rep1_proc
 ├── RPE1_Cut2_Rep2_guides.txt
 ├── RPE1_Cut2_Rep2_indel
-├── RPE1_Cut2_Rep2_proc
+└──  RPE1_Cut2_Rep2_proc
 ...
 ```
 
@@ -130,7 +131,7 @@ For this manual, after running the example samplesheet Data1.tsv:
 projects/data/Data1
 ├── Data1_guides.txt
 ├── Data1_indel
-├── Data1_proc
+└──  Data1_proc
 ```
 
 ## Reference
