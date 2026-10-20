@@ -7,6 +7,8 @@ Nextflow implementation of the REPAIRome pipeline [https://zenodo.org/records/15
 - [Usage](#usage)
   - [FASTQ files](#fastq-files)
   - [Metadata](#metadata)
+  - [Run](#run)
+  - [Output](#output)
 - [References](#references)
 
 ---
@@ -100,4 +102,36 @@ nextflow run "$REPAIROME_CODE/main.nf" \
 
 ```
 
-### nf-repairome will generate the directories according to the metadata
+### Output
+
+nf-repairome will automatically generate the directories according to the metadata. For example, for our RPE1 data:
+
+```
+projects/data/RPE1/Cut1
+├── RPE1_Cut1_Rep1_guides.txt
+├── RPE1_Cut1_Rep1_indel
+├── RPE1_Cut1_Rep1_proc
+├── RPE1_Cut1_Rep2_guides.txt
+├── RPE1_Cut1_Rep2_indel
+├── RPE1_Cut1_Rep2_proc
+├── ...
+projects/data/RPE1/Cut2
+├── RPE1_Cut2_Rep1_guides.txt
+├── RPE1_Cut2_Rep1_indel
+├── RPE1_Cut2_Rep1_proc
+├── RPE1_Cut2_Rep2_guides.txt
+├── RPE1_Cut2_Rep2_indel
+├── RPE1_Cut2_Rep2_proc
+├── ...
+...
+```
+
+For this manual, after running the example metadata Data1.tsv
+
+```
+projects/data/Data1
+├── Data1_guides.txt
+├── Data1_indel
+├── Data1_proc
+├── ...
+```
