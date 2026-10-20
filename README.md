@@ -5,6 +5,8 @@ Nextflow implementation of the REPAIRome pipeline [https://zenodo.org/records/15
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
+  - [FASTQ files](#fastq-files)
+  - [Metadata](#metadata)
 - [References](#references)
 
 ---
