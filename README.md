@@ -11,7 +11,7 @@ Nextflow implementation of the REPAIRome pipeline [https://zenodo.org/records/15
 
 ## Installation
 
-Clone and install the nf-repairome workflow
+### Clone and install the nf-repairome workflow
 
 ```bash
 # Navigate to your workspace directory (e.g., $HOME)
@@ -28,7 +28,7 @@ echo 'export REPAIROME_CODE="$HOME/nf-repairome"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-Create and activate the Conda environment
+### Create and activate the Conda environment
 
 ```bash
 # Create the `repairome` Conda enviroment and install required packages 
@@ -58,7 +58,7 @@ projects/fastq/
 
 ### Metadata
 
-The structure of the metadata is <CELL_LINE_NAME> <CUT_POSITION> <REPLICATE> <FASTQ_FILE_NAME>. Therefore, the metadata to run our RPE1 data will be:
+The structure of the metadata is <CELL_LINE_NAME> <CUT_POSITION> <REPLICATE> <FASTQ_FILE_NAME>. Therefore, the required metadata to run our RPE1 data will be:
 
 ```
 | RPE1 | Cut1 | Rep1 | SRR29304328 |
@@ -69,14 +69,14 @@ The structure of the metadata is <CELL_LINE_NAME> <CUT_POSITION> <REPLICATE> <FA
 | RPE1 | Cut3 | Rep2 | SRR29304323 |
 ```
 
-And the example metadata Data1.tsv for this manual can be found here:
+For this manual, the example metadata Data1.tsv can be found here:
 
 ```
 projects/
 ├── Data1.tsv
 ```
 
-These two coulmns <CUT_POSITION> <REPLICATE> can be NA
+These two coulmns <CUT_POSITION> and <REPLICATE> can be NA
 
 ```
 | Data1 | NA | NA | Data1 |
