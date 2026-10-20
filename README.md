@@ -62,7 +62,7 @@ projects/fastq/
 
 ### Samplesheet
 
-The structure of the samplesheet is <CELL_LINE_NAME> <CUT_POSITION> <EXPERIMENTAL_REPLICATE> <FASTQ_FILE_NAME>. Therefore, the required samplesheet to run our RPE1 datasets will be:
+The structure of the samplesheet metadata is <CELL_LINE_NAME> <CUT_POSITION> <EXPERIMENTAL_REPLICATE> <FASTQ_FILE_NAME>. Therefore, the required samplesheet to run our RPE1 datasets will be:
 
 ```
 | RPE1 | Cut1 | Rep1 | SRR29304328 |
