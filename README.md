@@ -6,7 +6,7 @@ Nextflow implementation of the REPAIRome pipeline [https://zenodo.org/records/15
 - [Installation](#installation)
 - [Usage](#usage)
   - [FASTQ files](#fastq-files)
-  - [Metadata](#metadata)
+  - [Samplesheet](#samplesheet)
   - [Run](#run)
   - [Output](#output)
 - [References](#references)
@@ -48,7 +48,7 @@ conda activate repairome
 
 ## Usage
 
-How to run the example data shipped with the workflow.
+How to run the example datasets shipped with the workflow.
 
 ### FASTQ files
 
@@ -60,9 +60,9 @@ projects/fastq/
 ├── Data1_2.fastq.gz
 ```
 
-### Metadata
+### Samplesheet
 
-The structure of the metadata is <CELL_LINE_NAME> <CUT_POSITION> <EXPERIMENTAL_REPLICATE> <FASTQ_FILE_NAME>. Therefore, the required metadata to run our RPE1 data will be:
+The structure of the samplesheet is <CELL_LINE_NAME> <CUT_POSITION> <EXPERIMENTAL_REPLICATE> <FASTQ_FILE_NAME>. Therefore, the required samplesheet to run our RPE1 datasets will be:
 
 ```
 | RPE1 | Cut1 | Rep1 | SRR29304328 |
@@ -73,14 +73,14 @@ The structure of the metadata is <CELL_LINE_NAME> <CUT_POSITION> <EXPERIMENTAL_R
 | RPE1 | Cut3 | Rep2 | SRR29304323 |
 ```
 
-For this manual, the example metadata Data1.tsv can be found here:
+For this manual, the example samplesheet Data1.tsv can be found here:
 
 ```
 projects/
 ├── Data1.tsv
 ```
 
-And these two coulmns <CUT_POSITION> and <EXPERIMENTAL_REPLICATE> can be NA.
+These two coulmns <CUT_POSITION> and <EXPERIMENTAL_REPLICATE> can be NA.
 
 ```
 | Data1 | NA | NA | Data1 |
@@ -104,7 +104,7 @@ nextflow run "$NF_REPAIROME_CODE/main.nf" \
 
 ### Output
 
-nf-repairome will automatically generate the directories according to the metadata. For example, for our RPE1 data:
+nf-repairome will automatically generate the directories according to the input samplesheet. For example, for our RPE1 datasets:
 
 ```
 projects/data/RPE1/Cut1
@@ -126,7 +126,7 @@ projects/data/RPE1/Cut2
 ...
 ```
 
-For this manual, after running the example metadata Data1.tsv:
+For this manual, after running the example samplesheet Data1.tsv:
 
 ```
 projects/data/Data1
