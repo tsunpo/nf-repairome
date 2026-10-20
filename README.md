@@ -1,6 +1,6 @@
 # nf-repairome
 
-Nextflow implementation of the REPAIRome pipeline [<a href="https://zenodo.org/records/15095299" target="_blank" rel="noopener noreferrer">https://zenodo.org/records/15095299</a>]
+Nextflow implementation of the REPAIRome pipeline [[https://zenodo.org/records/15095299](https://zenodo.org/records/15095299)]
 
 ## Table of Contents
 - [Installation](#installation)
