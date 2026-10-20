@@ -114,7 +114,6 @@ projects/data/RPE1/Cut1
 ├── RPE1_Cut1_Rep2_guides.txt
 ├── RPE1_Cut1_Rep2_indel
 └── RPE1_Cut1_Rep2_proc
-
 projects/data/RPE1/Cut2
 ├── RPE1_Cut2_Rep1_guides.txt
 ├── RPE1_Cut2_Rep1_indel
