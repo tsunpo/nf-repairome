@@ -80,7 +80,7 @@ projects/
 ├── Data1.tsv
 ```
 
-These two coulmns <CUT_POSITION> and <EXPERIMENTAL_REPLICATE> can be NA.
+These two coulmns <CUT_POSITION> and <EXPERIMENTAL_REPLICATE> in the samplesheet can be NA.
 
 ```
 | Data1 | NA | NA | Data1 |
