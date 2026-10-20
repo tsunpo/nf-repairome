@@ -11,7 +11,7 @@ Nextflow implementation of the REPAIRome pipeline [https://zenodo.org/records/15
 
 ## Installation
 
-### Clone and install the nf-repairome workflow
+Clone and install the nf-repairome workflow
 
 ```bash
 # Navigate to your workspace directory (e.g., $HOME)
@@ -28,7 +28,7 @@ echo 'export REPAIROME_CODE="$HOME/nf-repairome"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-### Create and activate the Conda environment
+Create and activate the Conda environment
 
 ```bash
 # Create the `repairome` Conda enviroment and install required packages 
