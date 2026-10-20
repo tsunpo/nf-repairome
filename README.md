@@ -82,8 +82,8 @@ projects/
 
 These two coulmns <CUT_POSITION> and <EXPERIMENTAL_REPLICATE> in the samplesheet can be NA.
 
-```
-| Data1 | NA | NA | Data1 |
+```text
+Data1    NA    NA    Data1
 ```
 
 ### Run
