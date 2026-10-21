@@ -11,6 +11,7 @@ Nextflow implementation of the REPAIRome pipeline [https://zenodo.org/records/15
   - [Output](#output)
 - [Troubleshooting](#troubleshooting)
   - [Empty 0-byte output guides file](#empty-0-byte-output-guides-file)
+  - [Unexpected short read length (25 nt) in SRA download] (#unexpected-short-read-length-(25-nt)-in-sra-download)
 - [References](#references)
 
 ---
