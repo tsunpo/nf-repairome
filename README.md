@@ -151,7 +151,7 @@ projects
 
 ### Empty 0-byte output guides file
 
-After running step 1 (`ALIGN_GUIDES_R1`) to align the R1 reads (sgRNA) against the Toronto KnockOut (TKOv3) guides library.
+After running Step 1 (`ALIGN_GUIDES_R1`) to align Read 1 reads (sgRNA) against the Toronto KnockOut (TKOv3) guides library, , `RPE1_Cut1_Rep1_guides.txt` was generated as a 0-byte file:
 
 ```text
    0 Oct 20 16:52 RPE1_Cut1_Rep1_guides.txt
@@ -162,21 +162,24 @@ After running step 1 (`ALIGN_GUIDES_R1`) to align the R1 reads (sgRNA) against t
 4.0G Oct 21 00:32 RPE1_Cut1_Rep2_proc
 ```
 
-To check whether the `ALIGN_GUIDES_R1` process executed and completed successfully.
+To investigate why `ALIGN_GUIDES_R1` failed for this sample, check the execution sandbox logs in the Nextflow work directory:
 
 ```bash
-# Search .nextflow.log for the ALIGN_GUIDES_R1 work directory hash
+# Search .nextflow.log for the ALIGN_GUIDES_R1 task work directory hash
 grep "ALIGN_GUIDES_R1" .nextflow.log
 
-# Check the execution logs of ALIGN_GUIDES_R1 (RPE1_Cut1_Rep1) directly in its work directory
+# Navigate directly to the task work directory for RPE1_Cut1_Rep1
 cd /storage/scratch01/groups/tdb/topology_and_estrogen_mol_cell/repairome/work/e0/705d1a93a5411fd1b5feff27f0ed1e
 
-# Check file size
+# Verify the file size
 ls -lh RPE1_Cut1_Rep1_guides.txt
 
-# Check stdOut and stdErr logs to see why Bowtie2 or Trimmomatic exited prematurely
+# Inspect stdout and stderr logs to diagnose early process termination
+cat .command.out
 cat .command.err
 ```
+
+Standard error log (`.command.err`)
 
 ```bash
 TrimmomaticSE: Started with arguments:
