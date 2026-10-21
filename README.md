@@ -11,7 +11,7 @@ Nextflow implementation of the REPAIRome pipeline [https://zenodo.org/records/15
   - [Output](#output)
 - [Troubleshooting](#troubleshooting)
   - [Empty 0-byte output guides file](#empty-0-byte-output-guides-file)
-  - [Unexpected short read length (25 nt) in SRA download] (#unexpected-short-read-length-(25-nt)-in-sra-download)
+  - [Unexpectedly short 25-nt read length in SRA download] (#unexpectedly-short-25-nt-read-length-in-sra-download)
 - [References](#references)
 
 ---
@@ -234,7 +234,7 @@ Input Reads: 136270153 Surviving: 0 (0.00%) Dropped: 136270153 (100.00%)
 TrimmomaticSE: Completed successfully
 ```
 
-### Unexpected short read length (25 nt) in SRA download
+### Unexpectedly short 25-nt read length in SRA download
 
 It appears that the format of `SRR29304328_1.fastq.gz` (Cut1 / Rep1 / R1) differs from the others, as its reads are only 25 nt long:
 
