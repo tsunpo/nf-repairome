@@ -154,12 +154,24 @@ projects
 After running Step 1 (`ALIGN_GUIDES_R1`) to align Read 1 reads (sgRNA) against the Toronto KnockOut (TKOv3) guides library, `RPE1_Cut1_Rep1_guides.txt` was generated as a 0-byte file:
 
 ```text
-   0 Oct 20 16:52 RPE1_Cut1_Rep1_guides.txt
-3.4G Oct 20 21:38 RPE1_Cut1_Rep1_indel
-2.7G Oct 20 21:38 RPE1_Cut1_Rep1_proc
- 10G Oct 20 18:16 RPE1_Cut1_Rep2_guides.txt
-5.7G Oct 21 00:32 RPE1_Cut1_Rep2_indel
-4.0G Oct 21 00:32 RPE1_Cut1_Rep2_proc
+   0 RPE1_Cut1_Rep1_guides.txt
+3.4G RPE1_Cut1_Rep1_indel
+2.7G RPE1_Cut1_Rep1_proc
+ 10G RPE1_Cut1_Rep2_guides.txt
+5.7G RPE1_Cut1_Rep2_indel
+4.0G RPE1_Cut1_Rep2_proc
+ 19K RPE1_Cut2_Rep1_guides.txt
+3.6G RPE1_Cut2_Rep1_indel
+2.4G RPE1_Cut2_Rep1_proc
+ 11G RPE1_Cut2_Rep2_guides.txt
+6.2G RPE1_Cut2_Rep2_indel
+3.8G RPE1_Cut2_Rep2_proc
+ 13G RPE1_Cut3_Rep1_guides.txt
+6.8G RPE1_Cut3_Rep1_indel
+4.5G RPE1_Cut3_Rep1_proc
+   0 RPE1_Cut3_Rep2_guides.txt
+2.9G RPE1_Cut3_Rep2_indel
+2.4G RPE1_Cut3_Rep2_proc
 ```
 
 To investigate why `ALIGN_GUIDES_R1` failed on this read, check the execution sandbox logs in the Nextflow work directory:
