@@ -166,6 +166,7 @@ To investigate why `ALIGN_GUIDES_R1` failed on this read, check the execution sa
 
 ```bash
 # Search .nextflow.log for the ALIGN_GUIDES_R1 task work directory
+cd /storage/scratch01/groups/tdb/repairome
 grep "ALIGN_GUIDES_R1" .nextflow.log
 
 # Navigate directly to the task work directory for RPE1_Cut1_Rep1
