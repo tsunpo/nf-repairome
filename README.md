@@ -103,8 +103,8 @@ cd projects
 # Launch Nextflow
 nextflow run "$NF_REPAIROME_CODE/main.nf" \
     --samplesheet Data1.tsv \
-    --fastq_dir "$NF_REPAIROME_CODE/fastq" \
-    --outdir "$NF_REPAIROME_CODE/data" \
+    --fastq_dir fastq \
+    --outdir data \
     -profile slurm \
     -resume
 
