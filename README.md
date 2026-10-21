@@ -211,7 +211,7 @@ trimmomatic SE -threads 4 -phred33 \
   HEADCROP:26
 ```
 
-The execution output shows that Trimmomatic dropped 100% of the input reads (`Surviving: 0 (0.00%)`) during adapter trimming:
+The execution output confirms that Trimmomatic dropped 100% of the input reads (`Surviving: 0 (0.00%)`) during adapter trimming:
 
 ```bash
 TrimmomaticSE: Started with arguments:
