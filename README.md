@@ -151,7 +151,7 @@ projects
 
 ### Empty 0-byte output guides file
 
-After running step 1 (`ALIGN_GUIDES_R1`) to align R1 reads against the Toronto KnockOut (TKOv3) guides library.
+After running step 1 (`ALIGN_GUIDES_R1`) to align the R1 reads (sgRNA) against the Toronto KnockOut (TKOv3) guides library.
 
 ```text
    0 Oct 20 16:52 RPE1_Cut1_Rep1_guides.txt
