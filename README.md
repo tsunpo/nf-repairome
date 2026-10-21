@@ -233,7 +233,7 @@ Input Reads: 136270153 Surviving: 0 (0.00%) Dropped: 136270153 (100.00%)
 TrimmomaticSE: Completed successfully
 ```
 
-It seems the format of `SRR29304328_1.fastq.gz` (Cut1 / Rep1 / R1) is different than others, and its only 25 nt long:
+It appears that the format of `SRR29304328_1.fastq.gz` (Cut1 / Rep1 / R1) differs from the others, as its reads are only 25 nt long:
 
 ```txt
 @SRR29304328.2 NB552185:234:H2HYJAFX5:1:11101:6878:1028/1
@@ -243,7 +243,7 @@ NTATGAAGTGCATGTCAGCGGGTTT
 ...
 ```
 
-When compared to `SRR29304327_1.fastq.gz` (Cut1 / Rep2 / R1):
+For comparison, the format of `SRR29304327_1.fastq.gz` (Cut1 / Rep2 / R1) is:
 
 ```txt
 @SRR29304327.4 A01188:61:HMLGCDRX2:1:2101:19190:1000 length=28
@@ -253,7 +253,7 @@ F#:FFFFFF:FFFFFFFFFFFFFFF:FF
 ...
 ```
 
-Another 0-byte guides file from `SRR29304323_1.fastq.gz` (Cut3 / Rep2 / R1) has also 25 nt:
+Similarly, `SRR29304323_1.fastq.gz` (Cut3 / Rep2 / R1), which generates another 0-byte output guides file, contains also 25-nt reads:
 
 ```txt
 @SRR29304323.1 NB552185:270:HCCJYAFX5:1:11101:18181:1015 length=25
@@ -263,7 +263,7 @@ AAAAA#EEEEEEEEEEEEEEEEEEE
 ...
 ```
 
-Guides file from `SRR29304326_1.fastq.gz` (Cut2 / Rep1 / R1) is not empty, but the file size is only 19K:
+Although the output guides file from `SRR29304326_1.fastq.gz` (Cut2 / Rep1 / R1) is not empty, its file size is only 19K:
 
 ```txt
 @SRR29304326.1 NB552185:167:H5HMWAFX2:1:11102:5889:1040 length=48
