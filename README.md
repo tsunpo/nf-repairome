@@ -234,6 +234,8 @@ Input Reads: 136270153 Surviving: 0 (0.00%) Dropped: 136270153 (100.00%)
 TrimmomaticSE: Completed successfully
 ```
 
+### Unexpected short read length (25 nt) in SRA download
+
 It appears that the format of `SRR29304328_1.fastq.gz` (Cut1 / Rep1 / R1) differs from the others, as its reads are only 25 nt long:
 
 ```txt
