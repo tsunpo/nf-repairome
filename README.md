@@ -162,7 +162,7 @@ After running Step 1 (`ALIGN_GUIDES_R1`) to align Read 1 reads (sgRNA) against t
 4.0G Oct 21 00:32 RPE1_Cut1_Rep2_proc
 ```
 
-To investigate why `ALIGN_GUIDES_R1` failed for this read, check the execution sandbox logs in the Nextflow work directory:
+To investigate why `ALIGN_GUIDES_R1` failed on this read, check the execution sandbox logs in the Nextflow work directory:
 
 ```bash
 # Search .nextflow.log for the ALIGN_GUIDES_R1 task work directory
