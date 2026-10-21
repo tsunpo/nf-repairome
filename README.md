@@ -233,6 +233,36 @@ Input Reads: 136270153 Surviving: 0 (0.00%) Dropped: 136270153 (100.00%)
 TrimmomaticSE: Completed successfully
 ```
 
+It seems the format of SRR29304328_1.fastq.gz (Cut1 / Rep1 / R1) is different than others, and its only 25 nt long:
+
+```txt
+@SRR29304328.2 NB552185:234:H2HYJAFX5:1:11101:6878:1028/1
+NTATGAAGTGCATGTCAGCGGGTTT
++
+#AAAAEEEEEEEEEEEEEEEEEEE/
+...
+```
+
+When compared to SRR29304327_1.fastq.gz (Cut1 / Rep2 / R1):
+
+```txt
+@SRR29304327.4 A01188:61:HMLGCDRX2:1:2101:19190:1000 length=28
+GNATGATTCACAGATTCCAGGTTTTAGA
++SRR29304327.4 A01188:61:HMLGCDRX2:1:2101:19190:1000 length=28
+F#:FFFFFF:FFFFFFFFFFFFFFF:FF
+...
+```
+
+SRR29304323_1.fastq.gz (Cut3 / Rep2 / R1) has also 25 nt:
+
+```txt
+@SRR29304323.1 NB552185:270:HCCJYAFX5:1:11101:18181:1015 length=25
+TACCGNATTGCCAGGCACCTCGCCC
++SRR29304323.1 NB552185:270:HCCJYAFX5:1:11101:18181:1015 length=25
+AAAAA#EEEEEEEEEEEEEEEEEEE
+...
+```
+
 ## References
 - REPAIRome publication: [https://pubmed.ncbi.nlm.nih.gov/41037600/](https://pubmed.ncbi.nlm.nih.gov/41037600/)
 - REPAIRome website: [https://repairome.bioinfo.cnio.es](https://repairome.bioinfo.cnio.es)
