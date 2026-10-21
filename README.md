@@ -266,7 +266,7 @@ AAAAA#EEEEEEEEEEEEEEEEEEE
 ...
 ```
 
-Although the output guides file from `SRR29304326_1.fastq.gz` (Cut2 / Rep1 / R1) is not empty, its file size is only 19K:
+Although the output guides file from `SRR29304326_1.fastq.gz` (Cut2 / Rep1 / R1) is not empty, its file size is only 19K (see above):
 
 ```txt
 @SRR29304326.1 NB552185:167:H5HMWAFX2:1:11102:5889:1040 length=48
