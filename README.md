@@ -198,7 +198,7 @@ Time searching: 00:00:01
 Overall time: 00:00:01
 ```
 
-To confirm that the read length exceeds 26 bp and that the vector sequence matches the expected 5' headcrop offset.
+To confirm that Read 1 is longer than 26 nt and spans the expected 5' vector sequence before trimming.
 
 ```bash
 # Enter the FASTQ directory
@@ -211,7 +211,7 @@ trimmomatic SE -threads 4 -phred33 \
   HEADCROP:26
 ```
 
-The execution output confirms that Trimmomatic dropped 100% of the input reads (`Surviving: 0 (0.00%)`) during adapter trimming:
+The output confirms that Trimmomatic dropped 100% of the input reads (`Surviving: 0 (0.00%)`) during the 5' vector trimming step:
 
 ```bash
 TrimmomaticSE: Started with arguments:
