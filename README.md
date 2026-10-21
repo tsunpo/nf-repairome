@@ -153,25 +153,25 @@ projects
 
 After running Step 1 (`ALIGN_GUIDES_R1`) to align Read 1 reads (sgRNA) against the Toronto KnockOut (TKOv3) guides library, `RPE1_Cut1_Rep1_guides.txt` was generated as a 0-byte file:
 
-```text
-   0 RPE1_Cut1_Rep1_guides.txt
-3.4G RPE1_Cut1_Rep1_indel
-2.7G RPE1_Cut1_Rep1_proc
- 10G RPE1_Cut1_Rep2_guides.txt
-5.7G RPE1_Cut1_Rep2_indel
-4.0G RPE1_Cut1_Rep2_proc
- 19K RPE1_Cut2_Rep1_guides.txt
-3.6G RPE1_Cut2_Rep1_indel
-2.4G RPE1_Cut2_Rep1_proc
- 11G RPE1_Cut2_Rep2_guides.txt
-6.2G RPE1_Cut2_Rep2_indel
-3.8G RPE1_Cut2_Rep2_proc
- 13G RPE1_Cut3_Rep1_guides.txt
-6.8G RPE1_Cut3_Rep1_indel
-4.5G RPE1_Cut3_Rep1_proc
-   0 RPE1_Cut3_Rep2_guides.txt
-2.9G RPE1_Cut3_Rep2_indel
-2.4G RPE1_Cut3_Rep2_proc
+```diff
+-   0 RPE1_Cut1_Rep1_guides.txt
+ 3.4G RPE1_Cut1_Rep1_indel
+ 2.7G RPE1_Cut1_Rep1_proc
+  10G RPE1_Cut1_Rep2_guides.txt
+ 5.7G RPE1_Cut1_Rep2_indel
+ 4.0G RPE1_Cut1_Rep2_proc
+- 19K RPE1_Cut2_Rep1_guides.txt
+ 3.6G RPE1_Cut2_Rep1_indel
+ 2.4G RPE1_Cut2_Rep1_proc
+  11G RPE1_Cut2_Rep2_guides.txt
+ 6.2G RPE1_Cut2_Rep2_indel
+ 3.8G RPE1_Cut2_Rep2_proc
+  13G RPE1_Cut3_Rep1_guides.txt
+ 6.8G RPE1_Cut3_Rep1_indel
+ 4.5G RPE1_Cut3_Rep1_proc
+-   0 RPE1_Cut3_Rep2_guides.txt
+ 2.9G RPE1_Cut3_Rep2_indel
+ 2.4G RPE1_Cut3_Rep2_proc
 ```
 
 To investigate why `ALIGN_GUIDES_R1` failed on this read, check the execution sandbox logs in the Nextflow work directory:
@@ -233,7 +233,7 @@ Input Reads: 136270153 Surviving: 0 (0.00%) Dropped: 136270153 (100.00%)
 TrimmomaticSE: Completed successfully
 ```
 
-It seems the format of SRR29304328_1.fastq.gz (Cut1 / Rep1 / R1) is different than others, and its only 25 nt long:
+It seems the format of `SRR29304328_1.fastq.gz` (Cut1 / Rep1 / R1) is different than others, and its only 25 nt long:
 
 ```txt
 @SRR29304328.2 NB552185:234:H2HYJAFX5:1:11101:6878:1028/1
@@ -243,7 +243,7 @@ NTATGAAGTGCATGTCAGCGGGTTT
 ...
 ```
 
-When compared to SRR29304327_1.fastq.gz (Cut1 / Rep2 / R1):
+When compared to `SRR29304327_1.fastq.gz` (Cut1 / Rep2 / R1):
 
 ```txt
 @SRR29304327.4 A01188:61:HMLGCDRX2:1:2101:19190:1000 length=28
@@ -253,7 +253,7 @@ F#:FFFFFF:FFFFFFFFFFFFFFF:FF
 ...
 ```
 
-SRR29304323_1.fastq.gz (Cut3 / Rep2 / R1) has also 25 nt:
+`SRR29304323_1.fastq.gz` (Cut3 / Rep2 / R1) has also 25 nt:
 
 ```txt
 @SRR29304323.1 NB552185:270:HCCJYAFX5:1:11101:18181:1015 length=25
