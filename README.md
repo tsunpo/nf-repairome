@@ -236,7 +236,7 @@ TrimmomaticSE: Completed successfully
 
 ### Unexpectedly short 25-nt read length in SRA download
 
-It appears that the format of `SRR29304328_1.fastq.gz` (Cut1 / Rep1 / R1) differs from the others, as its reads are only 25 nt long:
+It appears that the format of `SRR29304328_1.fastq.gz` (Cut1 / Rep1 / R1) differs from the others, and its reads are only 25 nt long:
 
 ```txt
 @SRR29304328.2 NB552185:234:H2HYJAFX5:1:11101:6878:1028/1
