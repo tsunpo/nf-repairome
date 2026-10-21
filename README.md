@@ -165,7 +165,7 @@ After running Step 1 (`ALIGN_GUIDES_R1`) to align Read 1 reads (sgRNA) against t
 To investigate why `ALIGN_GUIDES_R1` failed for this read, check the execution sandbox logs in the Nextflow work directory:
 
 ```bash
-# Search .nextflow.log for the ALIGN_GUIDES_R1 task work directory hash
+# Search .nextflow.log for the ALIGN_GUIDES_R1 task work directory
 grep "ALIGN_GUIDES_R1" .nextflow.log
 
 # Navigate directly to the task work directory for RPE1_Cut1_Rep1
@@ -174,12 +174,12 @@ cd /storage/scratch01/groups/tdb/repairome/work/e0/705d1a93a5411fd1b5feff27f0ed1
 # Verify the file size
 ls -lh RPE1_Cut1_Rep1_guides.txt
 
-# Inspect stdout and stderr logs to diagnose early process termination
+# Inspect stdout and stderr log files
 cat .command.out
 cat .command.err
 ```
 
-Standard error log (`.command.err`)
+Standard error log file (`.command.err`)
 
 ```bash
 TrimmomaticSE: Started with arguments:
