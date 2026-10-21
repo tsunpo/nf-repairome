@@ -169,7 +169,7 @@ To investigate why `ALIGN_GUIDES_R1` failed for this sample, check the execution
 grep "ALIGN_GUIDES_R1" .nextflow.log
 
 # Navigate directly to the task work directory for RPE1_Cut1_Rep1
-cd /storage/scratch01/groups/tdb/topology_and_estrogen_mol_cell/repairome/work/e0/705d1a93a5411fd1b5feff27f0ed1e
+cd /storage/scratch01/groups/tdb/repairome/work/e0/705d1a93a5411fd1b5feff27f0ed1e
 
 # Verify the file size
 ls -lh RPE1_Cut1_Rep1_guides.txt
@@ -196,6 +196,28 @@ Multiseed full-index search: 00:00:00
 0.00% overall alignment rate
 Time searching: 00:00:01
 Overall time: 00:00:01
+```
+
+To confirm that the read length exceeds 26 bp and that the vector sequence matches the expected 5' headcrop offset.
+
+```bash
+# Enter the FASTQ directory
+cd /storage/scratch01/groups/tdb/repairome/fastq
+
+# Run Trimmomatic on Read 1
+trimmomatic SE -threads 4 -phred33 \
+  SRR29304328_1.fastq.gz \
+  SRR29304328_1_trimmed.fastq.gz \
+  HEADCROP:26
+```
+
+The execution output shows that Trimmomatic dropped 100% of the input reads (`Surviving: 0 (0.00%)`) during adapter trimming:
+
+```bash
+TrimmomaticSE: Started with arguments:
+ -threads 4 -phred33 SRR29304328_1.fastq.gz SRR29304328_1_trimmed.fastq.gz HEADCROP:26
+Input Reads: 136270153 Surviving: 0 (0.00%) Dropped: 136270153 (100.00%)
+TrimmomaticSE: Completed successfully
 ```
 
 ## References
