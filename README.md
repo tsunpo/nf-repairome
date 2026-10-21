@@ -9,6 +9,8 @@ Nextflow implementation of the REPAIRome pipeline [https://zenodo.org/records/15
   - [Samplesheet](#samplesheet)
   - [Run](#run)
   - [Output](#output)
+- [Troubleshooting](#troubleshooting)
+  - [Empty 0-byte output guides file](#empty-0-byte-output-guides-file)
 - [References](#references)
 
 ---
@@ -143,6 +145,54 @@ projects
         ├── Data1_guides.txt
         ├── Data1_indel
         └── Data1_proc
+```
+
+## Troubleshooting
+
+### Empty 0-byte output guides file
+
+After running step 1 (`ALIGN_GUIDES_R1`) to align R1 reads against the Toronto KnockOut (TKOv3) guides library.
+
+```text
+   0 Oct 20 16:52 RPE1_Cut1_Rep1_guides.txt
+3.4G Oct 20 21:38 RPE1_Cut1_Rep1_indel
+2.7G Oct 20 21:38 RPE1_Cut1_Rep1_proc
+ 10G Oct 20 18:16 RPE1_Cut1_Rep2_guides.txt
+5.7G Oct 21 00:32 RPE1_Cut1_Rep2_indel
+4.0G Oct 21 00:32 RPE1_Cut1_Rep2_proc
+```
+
+To check whether the `ALIGN_GUIDES_R1` process executed and completed successfully.
+
+```bash
+# Search .nextflow.log for the ALIGN_GUIDES_R1 work directory hash
+grep "ALIGN_GUIDES_R1" .nextflow.log
+
+# Check the execution logs of ALIGN_GUIDES_R1 (RPE1_Cut1_Rep1) directly in its work directory
+cd /storage/scratch01/groups/tdb/topology_and_estrogen_mol_cell/repairome/work/e0/705d1a93a5411fd1b5feff27f0ed1e
+
+# Check file size
+ls -lh RPE1_Cut1_Rep1_guides.txt
+
+# Check stdOut and stdErr logs to see why Bowtie2 or Trimmomatic exited prematurely
+cat .command.err
+```
+
+```bash
+TrimmomaticSE: Started with arguments:
+ -threads 4 -phred33 SRR29304328_1.fastq.gz RPE1_Cut1_Rep1_trimmed.fastq.gz HEADCROP:26
+Input Reads: 136270153 Surviving: 0 (0.00%) Dropped: 136270153 (100.00%)
+TrimmomaticSE: Completed successfully
+[WARNING] Failed to launch x86-64-v3 version, staying with default
+[WARNING] Failed to launch x86-64-v3 version, staying with default
+Time loading reference: 00:00:00
+Time loading forward index: 00:00:00
+Time loading mirror index: 00:00:00
+Multiseed full-index search: 00:00:00
+0 reads
+0.00% overall alignment rate
+Time searching: 00:00:01
+Overall time: 00:00:01
 ```
 
 ## References
