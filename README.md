@@ -49,6 +49,8 @@ conda create -n repairome \
 conda activate repairome
 ```
 
+<br>
+
 ## Usage
 
 This section demonstrates how to run the example dataset provided with the workflow.
@@ -147,6 +149,8 @@ projects
         ├── Data1_indel
         └── Data1_proc
 ```
+
+<br>
 
 ## Troubleshooting
 
