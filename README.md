@@ -2,8 +2,6 @@
 
 Nextflow implementation of the REPAIRome pipeline [https://zenodo.org/records/15095299]
 
----
-
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
@@ -50,8 +48,6 @@ conda create -n repairome \
 # Activate the Conda environment
 conda activate repairome
 ```
-
----
 
 ## Usage
 
@@ -151,8 +147,6 @@ projects
         ├── Data1_indel
         └── Data1_proc
 ```
-
----
 
 ## Troubleshooting
 
@@ -272,7 +266,7 @@ AAAAA#EEEEEEEEEEEEEEEEEEE
 ...
 ```
 
-Although the output guides file from `SRR29304326_1.fastq.gz` (Cut2 / Rep1 / R1) is not empty, its file size is only 19K (see above):
+Although the output guides file from `SRR29304326_1.fastq.gz` (Cut2 / Rep1 / R1) is not empty, its file size is only 19K ([see above](https://github.com/tsunpo/nf-repairome#empty-0-byte-output-guides-file)) :
 
 ```txt
 @SRR29304326.1 NB552185:167:H5HMWAFX2:1:11102:5889:1040 length=48
@@ -281,8 +275,6 @@ ACAGTTCCAGACCTCACAGGGAATTAGAGATAGATATAGCAAGAGACA
 /AAAAEEEEEEEEEEEEEAEA/A/<///6//////////////6///6
 ...
 ```
-
----
 
 ## References
 - REPAIRome publication: [https://pubmed.ncbi.nlm.nih.gov/41037600/](https://pubmed.ncbi.nlm.nih.gov/41037600/)
