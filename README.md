@@ -188,7 +188,7 @@ cd /storage/scratch01/groups/tdb/repairome/work/e0/705d1a93a5411fd1b5feff27f0ed1
 # Verify the file size
 ls -lh RPE1_Cut1_Rep1_guides.txt
 
-# Inspect stdout and stderr log files
+# Check stdout and stderr log files
 cat .command.out
 cat .command.err
 ```
