@@ -256,7 +256,7 @@ F#:FFFFFF:FFFFFFFFFFFFFFF:FF
 ...
 ```
 
-Similarly, `SRR29304323_1.fastq.gz` (Cut3 / Rep2 / R1), which generates another 0-byte output guides file, contains also 25-nt reads:
+Similarly, `SRR29304323_1.fastq.gz` (Cut3 / Rep2 / R1), which generates another 0-byte output guides file ([see above](https://github.com/tsunpo/nf-repairome#empty-0-byte-output-guides-file)), contains also 25-nt reads:
 
 ```txt
 @SRR29304323.1 NB552185:270:HCCJYAFX5:1:11101:18181:1015 length=25
