@@ -49,7 +49,7 @@ conda create -n repairome \
 conda activate repairome
 ```
 
-<br>
+---
 
 ## Usage
 
@@ -150,7 +150,7 @@ projects
         └── Data1_proc
 ```
 
-<br>
+---
 
 ## Troubleshooting
 
@@ -279,6 +279,8 @@ ACAGTTCCAGACCTCACAGGGAATTAGAGATAGATATAGCAAGAGACA
 /AAAAEEEEEEEEEEEEEAEA/A/<///6//////////////6///6
 ...
 ```
+
+---
 
 ## References
 - REPAIRome publication: [https://pubmed.ncbi.nlm.nih.gov/41037600/](https://pubmed.ncbi.nlm.nih.gov/41037600/)
