@@ -14,6 +14,8 @@ Nextflow implementation of the REPAIRome pipeline [https://zenodo.org/records/15
   - [Unexpectedly short 25-nt read length in SRA download](#unexpectedly-short-25-nt-read-length-in-sra-download)
 - [References](#references)
 
+---
+
 ## Installation
 
 ### Clone and install the nf-repairome workflow
