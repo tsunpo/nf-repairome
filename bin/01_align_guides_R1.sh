@@ -52,7 +52,7 @@ echo "====================================="
 trimmomatic SE -threads 4 -phred33 \
   "${FASTQ_R1}" \
   "${TRIMMED_R1}" \
-  HEADCROP:26
+  HEADCROP:25
 
 # 5. Step 2: Align to TKOv3 guide pseudo-genome
 bowtie2 -x "${BT2_INDEX}" \

@@ -39,7 +39,7 @@ process ALIGN_GUIDES_R1 {
     trimmomatic SE -threads 4 -phred33 \
         "${r1_fastq}" \
         "${meta.name_exp}_trimmed.fastq.gz" \
-        HEADCROP:0
+        HEADCROP:25
 
     # 2. Align to guide pseudo-genome
     bowtie2 -x "${bt2_base}" \
