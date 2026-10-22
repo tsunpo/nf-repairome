@@ -14,8 +14,6 @@ Nextflow implementation of the REPAIRome pipeline [https://zenodo.org/records/15
   - [Unexpectedly short 25-nt read length in SRA download](#unexpectedly-short-25-nt-read-length-in-sra-download)
 - [References](#references)
 
----
-
 ## Installation
 
 ### Clone and install the nf-repairome workflow
@@ -48,8 +46,6 @@ conda create -n repairome \
 # Activate the Conda environment
 conda activate repairome
 ```
-
----
 
 ## Usage
 
@@ -149,8 +145,6 @@ projects
         ├── Data1_indel
         └── Data1_proc
 ```
-
----
 
 ## Troubleshooting
 
@@ -279,8 +273,6 @@ ACAGTTCCAGACCTCACAGGGAATTAGAGATAGATATAGCAAGAGACA
 /AAAAEEEEEEEEEEEEEAEA/A/<///6//////////////6///6
 ...
 ```
-
----
 
 ## References
 - REPAIRome publication: [https://pubmed.ncbi.nlm.nih.gov/41037600/](https://pubmed.ncbi.nlm.nih.gov/41037600/)
