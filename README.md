@@ -2,6 +2,8 @@
 
 Nextflow implementation of the REPAIRome pipeline [https://zenodo.org/records/15095299]
 
+---
+
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
@@ -48,6 +50,8 @@ conda create -n repairome \
 # Activate the Conda environment
 conda activate repairome
 ```
+
+---
 
 ## Usage
 
@@ -147,6 +151,8 @@ projects
         ├── Data1_indel
         └── Data1_proc
 ```
+
+---
 
 ## Troubleshooting
 
@@ -275,6 +281,8 @@ ACAGTTCCAGACCTCACAGGGAATTAGAGATAGATATAGCAAGAGACA
 /AAAAEEEEEEEEEEEEEAEA/A/<///6//////////////6///6
 ...
 ```
+
+---
 
 ## References
 - REPAIRome publication: [https://pubmed.ncbi.nlm.nih.gov/41037600/](https://pubmed.ncbi.nlm.nih.gov/41037600/)
