@@ -279,7 +279,7 @@ ACAGTTCCAGACCTCACAGGGAATTAGAGATAGATATAGCAAGAGACA
 
 ### Setting HEADCROP:0 to perform no 5' base trimming on Read 1
 
-It appears that the RPE1 Read 1 FASTQ files from SRA have been trimmed already:
+It appears that the Read 1 FASTQ files of RPE1 downloaded from SRA have been trimmed already:
 
 ```txt
 RPE1_Cut1_Rep1: 25 nt
@@ -290,7 +290,9 @@ RPE1_Cut3_Rep1: 28 nt
 RPE1_Cut3_Rep2: 25 nt
 ```
 
-Therefore, re-run Step 1 with HEADCROP:0 to perform no trimming at all on Read 1:
+Therefore, re-run Step 1 with `HEADCROP:0` to perform no trimming at all on Read 1. As shown below, the empty outputs were restored (in green).
+
+At the same time, the overtraimmed ones (in red), which was mapped to everywehere in the genmoe, were mapped properly with the the new `HEADCROP:0` paremeters.
 
 <table>
 <tr>
