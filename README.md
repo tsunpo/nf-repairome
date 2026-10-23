@@ -151,7 +151,7 @@ projects
 
 ## Troubleshooting
 
-### Empty 0-byte output guides file
+### Empty 0-byte output guide files
 
 After running Step 1 (`ALIGN_GUIDES_R1`) to align Read 1 reads (sgRNA) against the Toronto KnockOut (TKOv3) guides library, `RPE1_Cut1_Rep1_guides.txt` was generated as a 0-byte file:
 
