@@ -282,12 +282,12 @@ ACAGTTCCAGACCTCACAGGGAATTAGAGATAGATATAGCAAGAGACA
 It appears that the Read 1 FASTQ files downloaded from SRA for RPE1 were already trimmed to short lengths (25–48 nt):
 
 ```txt
-RPE1_Cut1_Rep1: 25 nt
-RPE1_Cut1_Rep2: 27 nt
-RPE1_Cut2_Rep1: 48 nt
-RPE1_Cut2_Rep2: 28 nt
-RPE1_Cut3_Rep1: 28 nt
-RPE1_Cut3_Rep2: 25 nt
+RPE1/Cut1/Rep1/R1: 25 nt
+RPE1/Cut1/Rep2/R1: 27 nt
+RPE1/Cut2/Rep1/R1: 48 nt
+RPE1/Cut2/Rep2/R1: 28 nt
+RPE1/Cut3/Rep1/R1: 28 nt
+RPE1/Cut3/Rep2/R1: 25 nt
 ```
 
 Therefore, Step 1 was re-run using `HEADCROP:0` to bypass Read 1 trimming. As highlighted below, switching to `HEADCROP:0` successfully restored the empty output guide files (shown in green). Furthermore, reads that were previously over-trimmed under `HEADCROP:26` (causing reads to map non-specifically across the genome) were correctly aligned to their respective target guides (in red):
