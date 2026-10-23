@@ -12,6 +12,7 @@ Nextflow implementation of the REPAIRome pipeline [https://zenodo.org/records/15
 - [Troubleshooting](#troubleshooting)
   - [Empty 0-byte output guides file](#empty-0-byte-output-guides-file)
   - [Unexpectedly short 25-nt read length in SRA download](#unexpectedly-short-25-nt-read-length-in-sra-download)
+  - [Setting HEADCROP:0 to perform no 5' base trimming at all on Read 1](#setting-headcrop0-to-perform-no-5-base-trimming-at-all-on-read-1)
 - [References](#references)
 
 ---
@@ -275,6 +276,69 @@ ACAGTTCCAGACCTCACAGGGAATTAGAGATAGATATAGCAAGAGACA
 /AAAAEEEEEEEEEEEEEAEA/A/<///6//////////////6///6
 ...
 ```
+
+### Setting HEADCROP:0 to perform no 5' base trimming at all on Read 1
+
+<table>
+<tr>
+<th align="center">HEADCROP:26</th>
+<th align="center">HEADCROP:0</th>
+</tr>
+<tr>
+<td>
+
+<!-- Table 1: HEADCROP:26 -->
+
+```diff
+-   0 RPE1_Cut1_Rep1_guides.txt
+ 3.4G RPE1_Cut1_Rep1_indel
+ 2.7G RPE1_Cut1_Rep1_proc
+- 10G RPE1_Cut1_Rep2_guides.txt
+ 5.7G RPE1_Cut1_Rep2_indel
+ 4.0G RPE1_Cut1_Rep2_proc
+- 19K RPE1_Cut2_Rep1_guides.txt
+ 3.6G RPE1_Cut2_Rep1_indel
+ 2.4G RPE1_Cut2_Rep1_proc
+- 11G RPE1_Cut2_Rep2_guides.txt
+ 6.2G RPE1_Cut2_Rep2_indel
+ 3.8G RPE1_Cut2_Rep2_proc
+- 13G RPE1_Cut3_Rep1_guides.txt
+ 6.8G RPE1_Cut3_Rep1_indel
+ 4.5G RPE1_Cut3_Rep1_proc
+-   0 RPE1_Cut3_Rep2_guides.txt
+ 2.9G RPE1_Cut3_Rep2_indel
+ 2.4G RPE1_Cut3_Rep2_proc
+```
+
+</td>
+<td>
+
+<!-- Table 2: HEADCROP:0 -->
+
+```diff
+- 60M RPE1_Cut1_Rep1_guides.txt
+ 3.4G RPE1_Cut1_Rep1_indel
+ 2.7G RPE1_Cut1_Rep1_proc
+-4.5G RPE1_Cut1_Rep2_guides.txt
+ 5.7G RPE1_Cut1_Rep2_indel
+ 4.0G RPE1_Cut1_Rep2_proc
+- 13M RPE1_Cut2_Rep1_guides.txt
+ 3.6G RPE1_Cut2_Rep1_indel
+ 2.4G RPE1_Cut2_Rep1_proc
+-115M RPE1_Cut2_Rep2_guides.txt
+ 6.2G RPE1_Cut2_Rep2_indel
+ 3.8G RPE1_Cut2_Rep2_proc
+-483M RPE1_Cut3_Rep1_guides.txt
+ 6.8G RPE1_Cut3_Rep1_indel
+ 4.5G RPE1_Cut3_Rep1_proc
+- 14M RPE1_Cut3_Rep2_guides.txt
+ 2.9G RPE1_Cut3_Rep2_indel
+ 2.4G RPE1_Cut3_Rep2_proc
+```
+
+</td>
+</tr>
+</table>
 
 ## References
 - REPAIRome publication: [https://pubmed.ncbi.nlm.nih.gov/41037600/](https://pubmed.ncbi.nlm.nih.gov/41037600/)
