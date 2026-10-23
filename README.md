@@ -292,7 +292,7 @@ RPE1/Cut3/Rep2/R1: 25 nt
 
 Therefore, Step 1 (`ALIGN_GUIDES_R1`) was re-run using `HEADCROP:0` to bypass Read 1 trimming. As highlighted below, switching to `HEADCROP:0` successfully restored the empty output guide files (in green).
 
-Furthermore, reads that were previously over-trimmed under `HEADCROP:26` (causing reads to map non-specifically across the genome) were correctly aligned to their respective target guides (in red):
+Furthermore, reads that were previously over-trimmed under `HEADCROP:26` (causing reads to map non-specifically across the genome) were correctly aligned to their target guides (in red):
 
 <table>
 <tr>
