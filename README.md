@@ -12,7 +12,7 @@ Nextflow implementation of the REPAIRome pipeline [https://zenodo.org/records/15
 - [Troubleshooting](#troubleshooting)
   - [Empty 0-byte output guides file](#empty-0-byte-output-guides-file)
   - [Unexpectedly short 25-nt read length in SRA download](#unexpectedly-short-25-nt-read-length-in-sra-download)
-  - [Setting HEADCROP:0 to perform no 5' base trimming at all on Read 1](#setting-headcrop0-to-perform-no-5-base-trimming-at-all-on-read-1)
+  - [Setting HEADCROP:0 to perform no 5' base trimming on Read 1](#setting-headcrop0-to-perform-no-5-base-trimming-on-read-1)
 - [References](#references)
 
 ---
@@ -277,7 +277,20 @@ ACAGTTCCAGACCTCACAGGGAATTAGAGATAGATATAGCAAGAGACA
 ...
 ```
 
-### Setting HEADCROP:0 to perform no 5' base trimming at all on Read 1
+### Setting HEADCROP:0 to perform no 5' base trimming on Read 1
+
+It appears that the RPE1 Read 1 FASTQ files from SRA have been trimmed already:
+
+```txt
+RPE1_Cut1_Rep1: 25 nt
+RPE1_Cut1_Rep2: 27 nt
+RPE1_Cut2_Rep1: 48 nt
+RPE1_Cut2_Rep2: 28 nt
+RPE1_Cut3_Rep1: 28 nt
+RPE1_Cut3_Rep2: 25 nt
+```
+
+Therefore, re-run Step 1 with HEADCROP:0 to perform no trimming at all on Read 1:
 
 <table>
 <tr>
