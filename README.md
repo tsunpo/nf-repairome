@@ -290,13 +290,13 @@ ACAGTTCCAGACCTCACAGGGAATTAGAGATAGATATAGCAAGAGACA
 <!-- Table 1: HEADCROP:26 -->
 
 ```diff
--   0 RPE1_Cut1_Rep1_guides.txt
++   0 RPE1_Cut1_Rep1_guides.txt
  3.4G RPE1_Cut1_Rep1_indel
  2.7G RPE1_Cut1_Rep1_proc
 - 10G RPE1_Cut1_Rep2_guides.txt
  5.7G RPE1_Cut1_Rep2_indel
  4.0G RPE1_Cut1_Rep2_proc
-- 19K RPE1_Cut2_Rep1_guides.txt
++ 19K RPE1_Cut2_Rep1_guides.txt
  3.6G RPE1_Cut2_Rep1_indel
  2.4G RPE1_Cut2_Rep1_proc
 - 11G RPE1_Cut2_Rep2_guides.txt
@@ -305,7 +305,7 @@ ACAGTTCCAGACCTCACAGGGAATTAGAGATAGATATAGCAAGAGACA
 - 13G RPE1_Cut3_Rep1_guides.txt
  6.8G RPE1_Cut3_Rep1_indel
  4.5G RPE1_Cut3_Rep1_proc
--   0 RPE1_Cut3_Rep2_guides.txt
++   0 RPE1_Cut3_Rep2_guides.txt
  2.9G RPE1_Cut3_Rep2_indel
  2.4G RPE1_Cut3_Rep2_proc
 ```
@@ -316,13 +316,13 @@ ACAGTTCCAGACCTCACAGGGAATTAGAGATAGATATAGCAAGAGACA
 <!-- Table 2: HEADCROP:0 -->
 
 ```diff
-- 60M RPE1_Cut1_Rep1_guides.txt
++ 60M RPE1_Cut1_Rep1_guides.txt
  3.4G RPE1_Cut1_Rep1_indel
  2.7G RPE1_Cut1_Rep1_proc
 -4.5G RPE1_Cut1_Rep2_guides.txt
  5.7G RPE1_Cut1_Rep2_indel
  4.0G RPE1_Cut1_Rep2_proc
-- 13M RPE1_Cut2_Rep1_guides.txt
++ 13M RPE1_Cut2_Rep1_guides.txt
  3.6G RPE1_Cut2_Rep1_indel
  2.4G RPE1_Cut2_Rep1_proc
 -115M RPE1_Cut2_Rep2_guides.txt
@@ -331,7 +331,7 @@ ACAGTTCCAGACCTCACAGGGAATTAGAGATAGATATAGCAAGAGACA
 -483M RPE1_Cut3_Rep1_guides.txt
  6.8G RPE1_Cut3_Rep1_indel
  4.5G RPE1_Cut3_Rep1_proc
-- 14M RPE1_Cut3_Rep2_guides.txt
++ 14M RPE1_Cut3_Rep2_guides.txt
  2.9G RPE1_Cut3_Rep2_indel
  2.4G RPE1_Cut3_Rep2_proc
 ```
