@@ -10,9 +10,9 @@ Nextflow implementation of the REPAIRome pipeline [https://zenodo.org/records/15
   - [Run](#run)
   - [Output](#output)
 - [Troubleshooting](#troubleshooting)
-  - [Empty 0-byte output guides file](#empty-0-byte-output-guides-file)
+  - [Empty 0-byte output guide files](#empty-0-byte-output-guide-files)
   - [Unexpectedly short 25-nt read length in SRA download](#unexpectedly-short-25-nt-read-length-in-sra-download)
-  - [Setting HEADCROP:0 to perform no 5' base trimming on Read 1](#setting-headcrop0-to-perform-no-5-base-trimming-on-read-1)
+  - [Setting HEADCROP:0 to bypass Read 1 trimming](#setting-headcrop0-to-bypass-read-1-trimming)
 - [References](#references)
 
 ---
@@ -257,7 +257,7 @@ F#:FFFFFF:FFFFFFFFFFFFFFF:FF
 ...
 ```
 
-Similarly, `SRR29304323_1.fastq.gz` (Cut3 / Rep2 / R1), which generates another 0-byte output guides file ([see above](https://github.com/tsunpo/nf-repairome#empty-0-byte-output-guides-file)), contains also 25-nt reads:
+Similarly, `SRR29304323_1.fastq.gz` (Cut3 / Rep2 / R1), which generates another 0-byte output guide file ([see above](https://github.com/tsunpo/nf-repairome#empty-0-byte-output-guide-files)), contains also 25-nt reads:
 
 ```txt
 @SRR29304323.1 NB552185:270:HCCJYAFX5:1:11101:18181:1015 length=25
@@ -267,7 +267,7 @@ AAAAA#EEEEEEEEEEEEEEEEEEE
 ...
 ```
 
-Although the output guides file from `SRR29304326_1.fastq.gz` (Cut2 / Rep1 / R1) is not empty, its file size is only 19K ([see above](https://github.com/tsunpo/nf-repairome#empty-0-byte-output-guides-file)) :
+Although the output guide file from `SRR29304326_1.fastq.gz` (Cut2 / Rep1 / R1) is not empty, its file size is only 19K ([see above](https://github.com/tsunpo/nf-repairome#empty-0-byte-output-guide-files)) :
 
 ```txt
 @SRR29304326.1 NB552185:167:H5HMWAFX2:1:11102:5889:1040 length=48
@@ -277,9 +277,9 @@ ACAGTTCCAGACCTCACAGGGAATTAGAGATAGATATAGCAAGAGACA
 ...
 ```
 
-### Setting HEADCROP:0 to perform no 5' base trimming on Read 1
+### Setting HEADCROP:0 to bypass Read 1 trimming
 
-It appears that the Read 1 FASTQ files of RPE1 downloaded from SRA have been trimmed already:
+It appears that the Read 1 FASTQ files downloaded from SRA for RPE1 were already trimmed to short lengths (25–48 nt):
 
 ```txt
 RPE1_Cut1_Rep1: 25 nt
@@ -290,9 +290,7 @@ RPE1_Cut3_Rep1: 28 nt
 RPE1_Cut3_Rep2: 25 nt
 ```
 
-Therefore, re-run Step 1 with `HEADCROP:0` to perform no trimming at all on Read 1. As shown below, the empty outputs were restored (in green).
-
-At the same time, the overtraimmed ones (in red), which was mapped to everywehere in the genmoe, were mapped properly with the the new `HEADCROP:0` paremeters.
+Therefore, Step 1 was re-run using `HEADCROP:0` to bypass Read 1 trimming. As highlighted below, switching to `HEADCROP:0` successfully restored the empty output guide files (shown in green). Furthermore, reads that were previously over-trimmed under `HEADCROP:26` (causing reads to map non-specifically across the genome) were correctly aligned to their respective target guides (in red):
 
 <table>
 <tr>
